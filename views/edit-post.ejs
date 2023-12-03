@@ -1,0 +1,21 @@
+<%- include("includes/header") %>
+    <!--body start here-->
+    <div class="container py-md-5 container--narrow">
+        <a class="small font-weight-bold" href="/post/<%= post._id %>">&laquo; Back to post</a>
+        <form action="/post/<%= post._id%>/edit" method="post">
+            <div class="form-group">
+                <label for="post-title" class="text-muted mb-1"><small>Title</small></label>
+                <input type="text" value="<%= post.title %>" class="form-control form-control-lg form-control-title" name="title" id="post-title"  autocomplete="off">
+            </div>
+            <div class="form-group">
+                <label for="post-body" class="text-muted mb-1"><small>Developer Content</small></label>
+                <textarea required  class="form-control body-content tall-textarea" name="body" id="post-body"><%= post.body %></textarea>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-primary">Update Post</button>
+            </div>
+        </form>
+
+    </div>
+    
+ <%- include("includes/footer") %>

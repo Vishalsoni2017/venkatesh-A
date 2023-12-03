@@ -1,0 +1,19 @@
+<div class="container py-md-5 container--narrow  mt-2 mb-5">
+    <% if(followedFlag == 'followed!'){ %>
+    <div class="alert-success text-center">Successfully Followed</div>
+    <% } %>
+    <h2><img  class="avatar-small" src="<%= profile.avatar %>" alt=""> <%= profile.username %>
+    <% if(profile.username != loggedInUser && flag =='false') { %>
+     <form action="/addFollow/<%= profile.username %> " class="ml-2 d-inline" method="post">
+        <button class="btn btn-sm btn-primary">Follow<i class="fa fa-user-plus"></i></button>
+    </form>
+    <%} %>
+    <% if(flag == 'true') {%>
+    <form action="/addFollow/<%= profile.username %> " class="ml-2 d-inline" method="post">
+        <button class="btn btn-sm btn-danger">Unfollow<i class="fa fa-user-plus"></i></button>
+    </form>
+    <% } %>
+</h2>
+    <h5><%= profile.profile %></h5>
+
+   

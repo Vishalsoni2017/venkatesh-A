@@ -1,0 +1,30 @@
+<%- include('includes/header') %>
+
+<%- include('includes/shared') %> 
+<!--body start here-->
+
+
+    <div class="profile-nav nav nav-tabs pt-2 "> 
+        <a href="/profile/<%= profile.username %>" class="profile-nav-link nav-item nav-link ">Post </a>
+        <a href="/profile/<%= profile.username %>/follower" class="profile-nav-link nav-item nav-link active">Followers : <%= length %></a>
+        <a href="#" class="profile-nav-link nav-item nav-link">Following </a>
+    </div>
+
+    <div class="list-group">
+        <% posts.forEach(p =>{ %>
+            <a href="/post/<%= p._id %>" class="list-group-item list-group-action-item-action">
+            <img src="<%= p.user.avatar %>" alt="" class="avatar-tiny">
+            <strong><%= p.user.username %></strong>
+            
+        </a>
+
+        <% }) %>
+        
+        
+    </div>
+
+    
+
+</div>
+
+<%- include('includes/footer') %>

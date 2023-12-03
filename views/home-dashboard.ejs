@@ -1,0 +1,28 @@
+
+    <%- include('includes/header') %>
+    <!--body start here-->
+    <div class="container py-md-5 container--narrow">
+        <% if(errors == 'Already followed'){ %>
+        <div class="alert-danger text-center">You don't follow yourself !</div>
+        <% } %>
+        <h2 class="text-center mb-4">Hello <b><%= user.username %></b>, your feed is empty</h2>
+        <div class="list-group">
+            <div class="test-muted text-center">
+                Your feed displays the posts from the people you follow. If  you don't<br/>
+                have any friends to follow that's okay; you can search in search and <br/>
+                follow people,
+            </div>
+            
+        </div>
+
+    </div>
+
+     <div id="chat-wrapper" class="chat-wrapper shadow border-top border-left border-right ">
+       
+    <script src="/socket.io/socket.io.js"></script>
+    </div>
+
+
+    <%- include('includes/footer') %>
+    
+  

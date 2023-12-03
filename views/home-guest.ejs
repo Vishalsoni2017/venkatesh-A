@@ -1,0 +1,63 @@
+<%- include("includes/header") %>
+    <!--Alert -->
+    
+       <% errors.forEach(errors=>{ %>
+        <div class="alert-danger text-center">
+            <%= errors %>
+        </div>
+        
+       <% }) %> 
+       
+    
+
+
+    <!--body start here-->
+    <div class="container py-md">
+        
+        <div class="row align-items-center">
+            <div class="col-lg-7 py-3 py-md-5">
+                <h2 class="display-4">
+                    Space for Geeks👨‍💻!!    
+                </h2>
+                <p class="lead text-muted">
+                    Enjoy post and tweets on new technologies by developers for developers!!
+                </p>
+            </div>
+            <div class="col-lg-5 pl-lg-5 mb-3 py-lg-5">
+                <form action="/register" method="post" id="registration-form">
+                   <% regError.forEach(error=>{ %>
+                        <div class="alert-danger text-center">
+                            <%= error %>
+                        </div>
+                    <% }) %>
+                    <div class="form-group">
+                        <label for="username-register" class="text-muted mb-1"><small>Username</small></label>
+                        <input type="text" name="username" class='form-control' id="username-register" placeholder="Pick a username ">
+                    </div>
+                    <div class="form-group">
+                        <label for="type-register" class="text-muted mb-1"><small>Profile</small></label>
+                        <select name="profile" id="profile-register" class="form-control" placeholder="Pick a Profile" type="text">
+                            <option value="Andriod Developer">Andriod Developer</option>
+                            <option value="Web Developer">Web Developer</option>
+                            <option value="BlockChain">Block Chain</option>
+                            <option value="ML Engineer">ML Engineer</option>
+                            <option value="Coding Interview"> Coding Interview</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="email-register" class="text-muted mb-1"><small>E-mail</small></label>
+                        <input type="email" name='email' id="email-register" class="form-control"  placeholder="you@abc.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="password-register" class="text-muted mb-1"><small>Password</small></label>
+                        <input type="password" name="password" class="form-control" placeholder="Pick a password" id="password-register">
+                    </div>
+                    <button type="submit" class="btn btn-lg btn-info btn-block mt-4 py-3"> Sign Up for DevSpace</button>
+                </form>
+            </div>
+
+        </div>
+
+    </div>
+    
+    <%- include("includes/footer") %>

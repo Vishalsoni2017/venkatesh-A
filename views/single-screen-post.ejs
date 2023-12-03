@@ -1,0 +1,34 @@
+<%- include("includes/header") %>
+
+    <!--body start here-->
+
+    <div class="container py-md-5 container--narrow border mt-2 mb-5">
+       <% if(success =='post updated') { %>
+            <div class=alert-success>
+                Successfully updated
+            </div>
+       <% } %>
+        <div class="d-flex justify-content-between">
+            <h2><%= post.title %></h2>
+            <span class="pt-2">
+              <%  if(loginUser == username) { %>
+                <a href="/post/<%= post._id%>/edit" class="text-primary mr-2" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fas fa-edit"></i></a>
+                <form action="" class="delete-post-form d-inline" method="post">
+                    <button class="delete-post-button text-danger" data-toggle="tooltip" data-placement="top" title="delete"><i class="fas fa-trash"></i></button>
+                </form>
+            <% } %>
+            </span>
+        </div>
+        <p>
+            <a href="/profile/<%= username %>"><img src="<%= avatar %>" alt="" class="avatar-tiny"></a>Posted by <a href="/profile/<%= username %>"><%= username %></a> on <%= post.createdDate %>
+        </p>
+        <div class="body-content">
+            <%= post.body %>
+
+
+        </div>
+
+    </div>
+
+    <%- include("includes/footer") %>
+    
